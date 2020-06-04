@@ -21,16 +21,31 @@
 </head>
 <body class="min-h-screen font-sans">
     <div id="app">
-      <section class="px-8 py-4 mb-6">
-        <header class="container mx-auto">
-          <h1 class="md:flex">
-            <img
-              class="h-10  w-21"
-              src="/images/twitter.svg"
-              alt=""
-            >
-            <span class="py-2 mx-2 font-bold text-2xl">Tweety</span>
-          </h1>
+      <section class="px-8 py-4 mb-4">
+        <header class=" flex justify-content container mx-auto">
+          <div class="lg:w-1/8">
+            <h1 class="md:flex">
+              <img
+                class="h-8 mt-2"
+                src="/media/twitter.svg"
+                alt=""
+              >
+              <span class="py-2 mx-2 font-bold text-2xl">Tweety</span>
+            </h1>
+          </div>
+          <div class="shadow-md bg-tran rounded-lg p-6  lg:flex-1 mx-20">
+              Home
+          </div>
+          <div class="lg:w-1/5">
+            <input
+            class="bg-tran mt-2 p-4 text-lg w-full rounded-lg"
+             type="text"
+             name=""
+             value=""
+             placeholder="Search"
+             >
+          </div>
+
         </header>
       </section>
       <section class="px-8">
@@ -42,9 +57,11 @@
               <div class="lg:flex-1 lg:mx-10" style="max-width: 700px;">
                 @yield('content')
               </div>
-            <div class="lg:w-1/6 bg-blue-100 p-4 rounded-lg h-full">
-                  @include('_friends-list')
-            </div>
+
+                <div class="lg:w-1/6 bg-tran p-4 rounded-lg h-full">
+                      @include('_friends-list')
+                </div>
+
         </main>
       </section>
     </div>

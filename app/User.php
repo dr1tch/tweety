@@ -8,7 +8,7 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, Followable;
 
     /**
      * The attributes that are mass assignable.
@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'username', 'name', 'email', 'avatar', 'password',
     ];
 
     /**
@@ -37,8 +37,25 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function getAvatarAttribute(){
-      return "https://i.pravatar.cc/40?u=". $this->email;
+    public function getAvatarAttribute($value){
+      //return "https://i.pravatar.cc/150?u=".$this->email;
+      if ($value) {
+        return asset('storage/'.$value);
+      } else {
+        return asset('/images/default-avatar.svg');
+      }
+      return asset('storage/'.$value ?: '/images/default-avatar.svg');
+      // return asset('storage/',$this->avatar);
+      // if($value == null){
+      //   return '/media/1.png';
+      // } else {
+      //   return asset($value);
+
+    // }
+    }
+
+    public function getPasswordAttribute($value){
+      $this->attributes['password'] = bcrypt($value);
     }
 
     public function timeline(){
@@ -53,20 +70,22 @@ class User extends Authenticatable
       return Tweet::whereIn('user_id', $friends)
                 ->orWhere('user_id', $this->id)
                 ->latest()->get();
-
-
     }
 
     public function tweets()
     {
-      return $this->hasMany(Tweet::class);
+      return $this->hasMany(Tweet::class)->latest();
     }
 
-    public function follow(User $user){
-      return $this->follows()->save($user);
+    public function profile($append = '')
+    {
+      $path = route('profile', $this->username);
+      return $append ? "{$path}/{$append}" : $path;
     }
 
-    public function follows(){
-      return $this->belongsToMany(User::class, 'follows', 'user_id', 'following_user_id')->withTimestamps();
-    }
+
+    // public function getRouteKeyName()
+    // {
+    //   return 'name';
+    // }
 }

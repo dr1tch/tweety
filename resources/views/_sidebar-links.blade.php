@@ -1,66 +1,82 @@
 <ul >
     <li >
-      <a href="/" class="font-bold text-lg mb-4 block">
+      <a href="{{route('home')}}" class="font-bold text-lg mb-4 block flex items-center text-sm">
         <span>
-          <img class="rounded" src="media/analytics.svg" alt="">
-        </span>Dashboard
+          <img class="h-6 w-8 mr-2" src="/media/web.svg" alt="">
+        </span>Home
       </a>
     </li>
     <li>
-      <a href="/" class="font-bold text-lg mb-4 block">
+      <a href="/explore" class="font-bold text-lg mb-4 block flex items-center text-sm">
         <span>
-          <img class="rounded" src="media/hashtag.svg" alt="">
+          <img class="h-6 w-8 mr-2" src="/media/hashtag.svg" alt="">
         </span>Explore
       </a>
     </li>
     <li >
-      <a href="/" class="font-bold text-lg mb-4 block">
+      <a href="/" class="font-bold text-lg mb-4 block flex items-center text-sm">
         <span>
-         <img class="rounded" src="media/bell.svg" alt="">
+         <img class="h-6 w-8 mr-2" src="/media/bell.svg" alt="">
         </span>Notifications<span>13</span>
       </a>
     </li>
     <li>
-      <a href="/" class="font-bold text-lg mb-4 block">
+      <a href="/" class="font-bold text-lg mb-4 block flex items-center text-sm">
         <span>
-          <img class="rounded" src="media/email.svg" alt="">
+          <img class="h-6 w-8 mr-2" src="/media/email.svg" alt="">
         </span>Messages<span>13</span>
       </a>
     </li>
     <li>
-      <a href="/" class="font-bold text-lg mb-4 block">
+      <a href="/" class="font-bold text-lg mb-4 block flex items-center text-sm">
         <span>
-          <img class="rounded" src="media/ideas.svg" alt="">
-        </span>Ideas
+          <img class="h-6 w-8 mr-2" src="/media/bookmark.svg" alt="">
+        </span>Bookmarks
       </a>
     </li>
+    <li>
+      <a href="/" class="font-bold text-lg mb-4 block flex items-center text-sm">
+        <span>
+          <img class="h-6 w-8 mr-2" src="/media/square.svg" alt="">
+        </span>Lists
+      </a>
+    </li>
+    <!-- <li>
+      <a href="/" class="font-bold text-lg mb-4 block">
+        <span>
+          <img class="rounded" src="/media/ideas.svg" alt="">
+        </span>Ideas
+      </a>
+    </li> -->
     <!-- /home/dritch/Downloads/idea (4).svg
 /home/dritch/Downloads/lightbulb.svg
 /home/dritch/Downloads/cancel.svg -->
-    <li>
+    <!-- <li>
       <a href="/" class="font-bold text-lg mb-4 block">
         <span>
-          <img class="rounded" src="media/web.svg" alt="">
+          <img class="rounded" src="/media/web.svg" alt="">
         </span>Publications
       </a>
-    </li>
-    <li>
+    </li> -->
+    <!-- <li>
       <a href="/" class="font-bold text-lg mb-4 block">
         <span>
-          <img class="rounded" src="media/attention.svg" alt="">
+          <img class="rounded" src="/media/attention.svg" alt="">
         </span>Signalements
       </a>
-    </li>
+    </li> -->
+    @auth
     <li>
-      <a href="/" class="font-bold text-lg mb-4 block">
+      <a href="{{route('profile', auth()->user())}}" class="font-bold text-lg mb-4 block flex items-center text-sm">
         <span>
-          <img class="rounded" src="media/attention.svg" alt="">
+          <img class="rounded-full h-10 w-10 mr-2" src="{{auth()->user()->avatar}}" alt="">
         </span>Profile
       </a>
     </li>
-    <a href="/" class="font-bold text-lg mb-4 block">
+    @endauth
+    <a href="/" class="font-bold text-lg mb-4 block flex items-center text-sm">
       <span>
-        <img class="rounded" src="media/attention.svg" alt="">
+        <img class=" h-6 w-8 mr-2" src="/media/more.svg" alt="">
       </span>More
     </a>
   </li>

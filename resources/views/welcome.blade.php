@@ -74,7 +74,7 @@
               <a href="https://laracasts.com">Laracasts</a>
               <a href="#">|</a>
                 @auth
-                  <a href="{{ url('/home') }}">Tweets</a>
+                  <a href="{{ route('home') }}">Tweets</a>
                 @else
                   <a href="{{ route('login') }}">Login</a>
                   <a href="{{ route('register') }}">Register</a>
