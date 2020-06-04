@@ -2,7 +2,7 @@
   <img
     src="/images/Twitter-Banner.png"
     alt=""
-    class="rounded-lg mb-2"
+    class="rounded-t-lg mb-2"
   >
   <img
     class="rounded-full mr-2 absolute bottom-0 transform -translate-x-1/2 translate-y-1/2 "

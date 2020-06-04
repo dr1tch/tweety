@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <header class="mb-6 relative">
+    <header class="mb-6 relative bg-tran rounded-lg">
       @include('profiles._header-image')
 
       <div class="lg:flex md:block justify-between items-center px-6 mb-4">
