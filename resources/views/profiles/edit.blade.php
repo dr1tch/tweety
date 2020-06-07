@@ -11,10 +11,10 @@
         @csrf
         @method('PATCH')
         <div class="mb-6">
-          <label class="block mb-2 uppercase font-bold text-xstext-gray-700"
+          <label class="block mb-2 uppercase font-bold "
           for="name">Name</label>
 
-          <input class="border border-gray-400 p-2 w-full rounded-lg"
+          <input class="border border-gray-400 text-md p-3 w-full rounded-lg bg-transparent font-medium"
             type="text"
             name="name"
             value="{{$user->name}}"
@@ -26,10 +26,10 @@
           @enderror
         </div>
         <div class="mb-6">
-          <label class="block mb-2 uppercase font-bold text-xstext-gray-700"
+          <label class="block mb-2 uppercase font-bold "
           for="username">username</label>
 
-          <input class="border border-gray-400 p-2 w-full rounded-lg"
+          <input class="border border-gray-400 text-md p-3 w-full rounded-lg bg-transparent font-medium"
             type="text"
             name="username"
             value="{{$user->username}}"
@@ -41,10 +41,10 @@
           @enderror
         </div>
         <div class="mb-6">
-          <label class="block mb-2 uppercase font-bold text-xstext-gray-700"
+          <label class="block mb-2 uppercase font-bold "
           for="email">Email</label>
 
-          <input class="border border-gray-400 p-2 w-full rounded-lg"
+          <input class="border border-gray-400 text-md p-3 w-full rounded-lg bg-transparent font-medium"
             type="email"
             name="email"
             value="{{$user->email}}"
@@ -56,10 +56,10 @@
           @enderror
         </div>
         <div class="mb-6">
-          <label class="block mb-2 uppercase font-bold text-xstext-gray-700"
+          <label class="block mb-2 uppercase font-bold "
           for="avatar">avatar</label>
           <div class="flex">
-            <input class="border border-gray-400 p-2 w-full rounded-lg"
+            <input class="border border-gray-400 text-md p-3 w-full rounded-lg bg-transparent font-medium"
               type="file"
               name="avatar"
               id="avatar"
@@ -73,10 +73,10 @@
           @enderror
         </div>
         <div class="mb-6">
-          <label class="block mb-2 uppercase font-bold text-xstext-gray-700"
+          <label class="block mb-2 uppercase font-bold "
           for="password">Password</label>
 
-          <input class="border border-gray-400 p-2 w-full rounded-lg"
+          <input class="border border-gray-400 text-md p-3 w-full rounded-lg bg-transparent font-medium"
             type="password"
             name="password"
             id="password"
@@ -87,10 +87,10 @@
           @enderror
         </div>
         <div class="mb-6">
-          <label class="block mb-2 uppercase font-bold text-xstext-gray-700"
+          <label class="block mb-2 uppercase font-bold "
           for="password_confirmation">Password Confirmation</label>
 
-          <input class="border border-gray-400 p-2 w-full rounded-lg"
+          <input class="border border-gray-400 text-md p-3 w-full rounded-lg bg-transparent font-medium"
             type="password"
             name="password_confirmation"
             id="password_confirmation"
@@ -100,10 +100,13 @@
             <p class="text-red-500 text-xs mt-2">{{$message}}</p>
           @enderror
         </div>
-        <div class="mb-6">
+        <div class="mb-6 flex justify-between">
             <button
-              class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500"
+              class="bg-green-500 shadow text-white rounded py-2 px-4"
             type="submit">Submit</button>
+            <a href="{{route('profile', auth()->user())}}"
+              class="bg-red-500 shadow text-white rounded py-2 px-4 "
+            type="button">Cancel</a>
         </div>
     </form>
     </div>

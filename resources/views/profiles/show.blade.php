@@ -6,14 +6,14 @@
 
       <div class="lg:flex md:block justify-between items-center px-6 mb-4">
         <div class="mt-10">
-          <h2 class="font-bold text-2xl text-lg mb-0">{{ $user->name }}</h2>
+          <h2 class="font-bold text-2xl text-lg mb-0" style="max-width: 270px">{{ $user->name }}</h2>
           <p class="font-bold text-gray-500">@<span>{{ $user->username }}</span></p>
           <p class="text-sm text-purple-600">Joined {{ $user->created_at->diffForHumans() }}</p>
         </div>
         <div class="flex">
 
           @can('edit', $user)
-            <a href="{{$user->profile('edit')}}" class="rounded-full border border-green-500 text-green-500 shadow py-2 px-4 mr-2">Edit Profile</a>
+            <a href="{{$user->profile('edit')}}" class="rounded-lg border border-green-500 text-green-500 shadow py-2 px-4 mr-2">Edit Profile</a>
 
           @endcan
           @include('components._follow-button')

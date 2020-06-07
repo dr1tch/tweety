@@ -3,28 +3,28 @@
       <a href="{{route('home')}}" class="font-bold text-lg mb-4 block flex items-center text-sm">
         <span>
           <img class="h-6 w-8 mr-2" src="/media/web.svg" alt="">
-        </span>Home
+        </span>Home <span class="ml-4 text-green-500 text-xs">active</span>
       </a>
     </li>
     <li>
       <a href="/explore" class="font-bold text-lg mb-4 block flex items-center text-sm">
         <span>
           <img class="h-6 w-8 mr-2" src="/media/hashtag.svg" alt="">
-        </span>Explore
+        </span>Explore <span class="ml-4 text-green-500 text-xs">active</span>
       </a>
     </li>
     <li >
       <a href="/" class="font-bold text-lg mb-4 block flex items-center text-sm">
         <span>
          <img class="h-6 w-8 mr-2" src="/media/bell.svg" alt="">
-        </span>Notifications<span>13</span>
+       </span>Notifications <!-- <span class="ml-1 text-sm rounded-full bg-green-500 p-1">13</span> -->
       </a>
     </li>
     <li>
       <a href="/" class="font-bold text-lg mb-4 block flex items-center text-sm">
         <span>
           <img class="h-6 w-8 mr-2" src="/media/email.svg" alt="">
-        </span>Messages<span>13</span>
+        </span>Messages <!-- <span class="ml-1 text-sm rounded-full bg-green-500 p-1">13</span> -->
       </a>
     </li>
     <li>
@@ -70,7 +70,7 @@
       <a href="{{route('profile', auth()->user())}}" class="font-bold text-lg mb-4 block flex items-center text-sm">
         <span>
           <img class="rounded-full h-10 w-10 mr-2" src="{{auth()->user()->avatar}}" alt="">
-        </span>Profile
+        </span>Profile <span class="ml-4 text-green-500 text-xs">active</span>
       </a>
     </li>
     @endauth

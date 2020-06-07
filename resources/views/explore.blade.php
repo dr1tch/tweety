@@ -15,6 +15,8 @@
           <div class="">
             <h2 class="font-bold text-2xl text-lg mb-0">{{ $user->name }}</h2>
             <p class="font-bold text-gray-700">@<span>{{ $user->username }}</span></p>
+            <p class="font-bold text-gray-700">Tailwind CSS is a highly customizable, low-level CSS framework
+            that gives you all of the building blocks you need to</p>
             <!-- <p class="text-sm text-purple-600">Joined {{ $user->created_at->diffForHumans() }}</p> -->
           </div>
 

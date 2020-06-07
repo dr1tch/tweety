@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-
+use App\Tweet;
 class User extends Authenticatable
 {
     use Notifiable, Followable;
@@ -69,6 +69,7 @@ class User extends Authenticatable
 
       return Tweet::whereIn('user_id', $friends)
                 ->orWhere('user_id', $this->id)
+                ->withLikes()
                 ->latest()->get();
     }
 

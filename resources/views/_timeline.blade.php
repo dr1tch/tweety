@@ -4,4 +4,6 @@
   @empty
     <p class="p-4 text-center">No tweets yet.</p>
   @endforelse
+
+  
 </div>
